@@ -13,5 +13,66 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\View">
+      <UniqueIdentifier>{6712b830-0e8a-40ca-9e78-97665570de6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model">
+      <UniqueIdentifier>{227efe90-a253-449d-b651-3d11495dda3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller">
+      <UniqueIdentifier>{4d2699c8-cc13-42d8-b77c-23602e304671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\SimpleSorter">
+      <UniqueIdentifier>{58ea5243-cb0d-4a15-a859-659ad5867446}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller">
+      <UniqueIdentifier>{783a40e5-2166-451b-83f2-6b1950fc24ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model">
+      <UniqueIdentifier>{339a1378-cf9c-4505-ba8c-cd7da2d1a894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\View">
+      <UniqueIdentifier>{02ca719c-9941-4a49-9f98-22fb66f005ac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleSorter.cpp">
+      <Filter>Source Files\Model\SimpleSorter</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelBlock.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelBoxContainer.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Screen.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleSorter.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Sorter.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelBlock.h">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelBoxContainer.h">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
