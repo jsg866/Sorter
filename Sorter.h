@@ -1,11 +1,11 @@
 #pragma once
 #include <GLFW/glfw3.h>
-#include "PixelBoxContainer.h"
+#include "PixelBlockRow.h"
+#include "Container.h"
 class Sorter
 {
 
 public:
-	virtual void Sort(GLFWwindow *window, PixelBoxContainer *p) = 0;
-
+	virtual void Sort( PixelBlockRow *p) = 0;
 
 };

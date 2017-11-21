@@ -1,11 +1,24 @@
 #include "Screen.h"
-
-Screen::Screen(GLint WIDTH, GLint HEIGHT)
+#include <thread>
+#include "windows.h"
+Screen::Screen(GLint WIDTH, GLint HEIGHT, SimpleSorter* Solution):_Solution(Solution)
 {
 	window = initWindow(WIDTH, HEIGHT);
 }
 
-void Screen::Display(PixelBoxContainer* PBC, const Sorter &Solution)
+void Screen::DisplayRows(PixelBlockRow *PBR)
+{
+		_Solution->Sort(PBR);
+
+}
+
+class temp {
+
+public:
+	static void foo() {};
+};
+
+void Screen::Display(Container* PBC, SimpleSorter *Solution)
 {
 
 	while (!glfwWindowShouldClose(window))
@@ -26,7 +39,52 @@ void Screen::Display(PixelBoxContainer* PBC, const Sorter &Solution)
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
 
-		const_cast<Sorter&>(Solution).Sort(window, PBC);
+	PBC->DrawContainer();// 0, 0);
+
+	std::vector<PixelBlockRow> row = PBC->getRows();
+
+	for ( int i =0; i <PBC->getRows().size(); i ++)
+	{
+	//	std::vector<PixelBlockRow> row = PBC->getRows()
+
+		//for (auto row : PBC->getRows()) {
+			//Display(&row, Solution);
+			
+		// 3 working lines
+		PixelBlockRow *pbr = &row[i];
+		//Solution->Sort(pbr);
+		
+		//PixelBlockRow *pbr = &row[i];
+		//auto thread1 = std::thread(&SimpleSorter::Sort, Solution, pbr);//, window, std::ref(row));
+		//Sleep(5000);
+		//															   //
+		////thread1.join();
+		////PixelBlockRow *pbr = &row[i];
+		////
+	
+		std::thread *thread1 = new std::thread(&Screen::DisplayRows, this, pbr );//, window, std::ref(row));
+
+		thread1->join();
+	//	DisplayRows(pbr);
+
+
+																						   //	auto thread1 = std::thread(&Container::DrawContainer,PBC);//, window, std::ref(row));
+
+			
+		//	thread1.join();
+		//	Solution.Sort(window, &row);
+	
+		//2 working lines
+		/*PixelBlockRow *pbr = &row[i];
+		Display(*pbr, Solution);
+		*/
+
+//		Solution->Sort(&row[i]);
+		}
+		getchar();
+		
+
+	//	const_cast<Sorter&>(Solution).Sort(window, PBC);
 	}
 }
 
@@ -63,7 +121,7 @@ GLFWwindow* Screen::initWindow(const int resX, const int resY)
 	return window;
 }
 
-void Screen::controls(GLFWwindow* window, int key, int scancode, int action, int mods)
+void Screen::keyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	if (action == GLFW_PRESS)
 		if (key == GLFW_KEY_ESCAPE)

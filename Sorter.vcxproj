@@ -80,7 +80,7 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -118,16 +118,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Container.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PixelBlock.cpp" />
-    <ClCompile Include="PixelBoxContainer.cpp" />
+    <ClCompile Include="PixelBlockRow.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="SimpleSorter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Color.h" />
+    <ClInclude Include="Container.h" />
     <ClInclude Include="PixelBlock.h" />
-    <ClInclude Include="PixelBoxContainer.h" />
+    <ClInclude Include="PixelBlockRow.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="SimpleSorter.h" />
     <ClInclude Include="Sorter.h" />

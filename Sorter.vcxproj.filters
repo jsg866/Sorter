@@ -48,11 +48,14 @@
     <ClCompile Include="PixelBlock.cpp">
       <Filter>Source Files\View</Filter>
     </ClCompile>
-    <ClCompile Include="PixelBoxContainer.cpp">
-      <Filter>Source Files\View</Filter>
-    </ClCompile>
     <ClCompile Include="Screen.cpp">
       <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelBlockRow.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Container.cpp">
+      <Filter>Source Files\View</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,7 +74,10 @@
     <ClInclude Include="PixelBlock.h">
       <Filter>Header Files\View</Filter>
     </ClInclude>
-    <ClInclude Include="PixelBoxContainer.h">
+    <ClInclude Include="Container.h">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelBlockRow.h">
       <Filter>Header Files\View</Filter>
     </ClInclude>
   </ItemGroup>

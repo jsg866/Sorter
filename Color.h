@@ -7,33 +7,38 @@ class Color
 
 public:
 
-	Color(GLfloat _r = 0, GLfloat g = 0, GLfloat b = 0);
+	//Color(GLint _r = 0, GLint g = 0, GLint b = 0);
+	Color() = default;
+	Color(const Color&) = default;
+	Color(GLint r, GLint g, GLint b) :_r(r), _g(g), _b(b) {}
 
-	void SetColor(GLfloat r, GLfloat g, GLfloat b)
+	void SetColor(GLint r, GLint g, GLint b)
 	{
 		_r = r;
 		_g = g;
 		_b = b;
 	}
 
-	std::vector<GLfloat> GetColor()
+	/*
+	std::vector<GLint> GetColor()
 	{
-		std::vector<GLfloat> colorList;
+		std::vector<GLint> colorList;
 		colorList.push_back(_r);
 		colorList.push_back(_g);
 		colorList.push_back(_b);
 		return colorList;
 	}
+	*/
+	GLint GetR() { return _r; }
 
-	GLfloat GetR() { return _r; }
+	GLint GetG() { return _g; }
 
-	GLfloat GetG() { return _g; }
-
-	GLfloat GetB() { return _b; }
+	GLint GetB() { return _b; }
 
 private:
-	GLfloat _r;
-	GLfloat _g;
-	GLfloat _b;
+	
+	GLint _r;
+	GLint _g;
+	GLint _b;
 
 };
