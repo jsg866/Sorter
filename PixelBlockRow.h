@@ -1,6 +1,7 @@
 #pragma once
 #include "PixelBlock.h"
 #include <vector>
+#include <mutex>
 class PixelBlockRow
 {
 
@@ -24,5 +25,6 @@ private:
 	GLint _rowXPos;
 	GLint _rowYPos;
 	static const GLint _seperation = 50;
+	//std::mutex mtx;
 
 };

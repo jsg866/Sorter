@@ -22,10 +22,11 @@ void SimpleSorter::Sort( PixelBlockRow * p)
 
 				p->DrawPixelBlockRow();//(rand() % 255), (rand() % 255), (rand() % 255));
 
-				Sleep(5);
+				//Sleep(5);
 				
 			
 				glfwSwapBuffers(_window);
+				glfwMakeContextCurrent(NULL);
 
 			}
 		}

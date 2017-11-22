@@ -8,7 +8,7 @@ Screen::Screen(GLint WIDTH, GLint HEIGHT, SimpleSorter* Solution):_Solution(Solu
 
 void Screen::DisplayRows(PixelBlockRow *PBR)
 {
-		glfwSwapBuffers(window);
+	//	glfwSwapBuffers(window);
 		_Solution->Sort(PBR);
 
 }
@@ -46,46 +46,16 @@ void Screen::Display(Container* PBC, SimpleSorter *Solution)
 
 	for ( int i =0; i <PBC->getRows().size(); i ++)
 	{
-	//	std::vector<PixelBlockRow> row = PBC->getRows()
-
-		//for (auto row : PBC->getRows()) {
-			//Display(&row, Solution);
-			
-		// 3 working lines
 		PixelBlockRow *pbr = &row[i];
-		//Solution->Sort(pbr);
-		
-		//PixelBlockRow *pbr = &row[i];
-		//auto thread1 = std::thread(&SimpleSorter::Sort, Solution, pbr);//, window, std::ref(row));
-		//Sleep(5000);
-		//															   //
-		////thread1.join();
-		////PixelBlockRow *pbr = &row[i];
-		////
-	
-		//std::thread *thread1 = new std::thread(&Screen::DisplayRows, this, pbr );//, window, std::ref(row));
+		glfwMakeContextCurrent(NULL);
+		std::thread *thread1 = new std::thread(&Screen::DisplayRows, this, pbr );//, window, std::ref(row));
 		//thread1->join();
 		//glfwSwapBuffers(window);
-		DisplayRows(pbr);
+		//glfwMakeContextCurrent(NULL);
+		//DisplayRows(pbr);
 
-
-																						   //	auto thread1 = std::thread(&Container::DrawContainer,PBC);//, window, std::ref(row));
-
-			
-		//	thread1.join();
-		//	Solution.Sort(window, &row);
-	
-		//2 working lines
-		/*PixelBlockRow *pbr = &row[i];
-		Display(*pbr, Solution);
-		*/
-
-//		Solution->Sort(&row[i]);
 		}
 		getchar();
-		
-
-	//	const_cast<Sorter&>(Solution).Sort(window, PBC);
 	}
 }
 

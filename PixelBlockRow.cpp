@@ -26,12 +26,14 @@ PixelBlockRow::PixelBlockRow(GLint XPos, GLint YPos):_rowXPos(XPos), _rowYPos(YP
 
 void PixelBlockRow::DrawPixelBlockRow()//GLfloat Red, GLfloat Green, GLfloat Blue)
 {	
+//	mtx.lock();
 for (std::vector<PixelBlock>::iterator it = _row.begin(); it != _row.end(); ++it)
 	{
 		//it->SetColor(Red, Green, Blue);
 	it->DrawPixelBlock();
 		//	//Sleep(10);
 	}
+//mtx.unlock();
 	//glEnd();
 }
 
