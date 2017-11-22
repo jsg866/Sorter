@@ -22,6 +22,7 @@ int main(int argc, char** argv)
 //	Solution.SetWindow();
 	Screen *SCR = new Screen(WIDTH, HEIGHT, Solution);
 	Solution->SetWindow(SCR->GetWindow());
+	
 //	PixelBlock *p = new PixelBlock(0, 0, 40, 40, 255, 0, 0);
 //	PixelBlockRow *p1 = new PixelBlockRow(0, 0);
 	SCR->Display(cnt, Solution);

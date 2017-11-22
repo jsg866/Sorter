@@ -8,6 +8,7 @@ Screen::Screen(GLint WIDTH, GLint HEIGHT, SimpleSorter* Solution):_Solution(Solu
 
 void Screen::DisplayRows(PixelBlockRow *PBR)
 {
+		glfwSwapBuffers(window);
 		_Solution->Sort(PBR);
 
 }
@@ -62,10 +63,10 @@ void Screen::Display(Container* PBC, SimpleSorter *Solution)
 		////PixelBlockRow *pbr = &row[i];
 		////
 	
-		std::thread *thread1 = new std::thread(&Screen::DisplayRows, this, pbr );//, window, std::ref(row));
-
-		thread1->join();
-	//	DisplayRows(pbr);
+		//std::thread *thread1 = new std::thread(&Screen::DisplayRows, this, pbr );//, window, std::ref(row));
+		//thread1->join();
+		//glfwSwapBuffers(window);
+		DisplayRows(pbr);
 
 
 																						   //	auto thread1 = std::thread(&Container::DrawContainer,PBC);//, window, std::ref(row));
@@ -86,6 +87,11 @@ void Screen::Display(Container* PBC, SimpleSorter *Solution)
 
 	//	const_cast<Sorter&>(Solution).Sort(window, PBC);
 	}
+}
+
+ void Screen::TEST()
+{
+	glfwSwapBuffers(window);
 }
 
 GLFWwindow* Screen::initWindow(const int resX, const int resY)

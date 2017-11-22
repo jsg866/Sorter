@@ -22,6 +22,8 @@ public:
 
 	void Display(Container* PBC, SimpleSorter *Solution);
 
+	void TEST();
+
 	//void Display(PixelBlock *p);
 
 	//void Display(PixelBlockRow * p);

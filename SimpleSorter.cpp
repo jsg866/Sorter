@@ -1,15 +1,12 @@
 #include "SimpleSorter.h"
 #include<iostream>
 #include <Windows.h>
-static int ij = 0;
+
+
 void SimpleSorter::Sort( PixelBlockRow * p)
 {
 	auto block = p->GetRow();
 
-	//for (int i = 0; i < block.size(); i++)
-	//{
-	//	block[i].getR();
-	//}
 
 	for (int i = 0; i < block.size()-1; i++)
 	{
@@ -20,13 +17,16 @@ void SimpleSorter::Sort( PixelBlockRow * p)
 				Color c = block[i].GetColor();
 				block[i].SetColor(block[j].GetColor());
 				block[j].SetColor(c);
+
+				glfwMakeContextCurrent(_window);
+
 				p->DrawPixelBlockRow();//(rand() % 255), (rand() % 255), (rand() % 255));
-				//block[i].DrawPixelBlock();
-				//block[j].DrawPixelBlock();
+
 				Sleep(5);
-					//GOTO :LAbel
+				
+			
 				glfwSwapBuffers(_window);
-				std::cout << ij++ << std::endl;
+
 			}
 		}
 	}
